@@ -1,0 +1,13 @@
+{
+    "student": {
+        "name": "Thiago Nogueira",
+        "email": "thiago@smartbit.com",
+        "age": "33",
+        "feet_tall": 1.76,
+        "weight": 110
+    },
+    "enroll": {
+        "plan": "Smart"
+    },
+    "help": "Como faço para ganhar massa muscular magra?"
+}

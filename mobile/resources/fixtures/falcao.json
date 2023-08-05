@@ -1,6 +1,13 @@
 {
-    "student": {
-        "id": 1,
-        "name": "Falcão"
-    }
+    "student": {        
+        "name": "Falcão",        
+        "email": "falcao@gmail.com",
+        "age": "40",
+        "feet_tall": 1.85,
+        "weight": 110
+    },
+    "enroll": {
+        "plan": "Black"
+    },
+    "help": "Como se tornar o campeão dos campeões?"
 }

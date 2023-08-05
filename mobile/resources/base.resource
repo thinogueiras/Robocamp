@@ -5,6 +5,14 @@ Library                 AppiumLibrary
 Library                 JSONLibrary
 
 Resource                screens/login.resource
+Resource                screens/components/popup.resource
+Resource                screens/components/footer.resource
+Resource                screens/help.resource
+
+Resource                services/sessions.resource
+Resource                services/students.resource
+
+Resource                database.resource
 
 *** Keywords ***
 Start App
@@ -18,11 +26,12 @@ Start App
     ...                 autoGrantPermissions=true
     ...                 noReset=true
 
-    Wait Until Page Contains        Informe seu código de acesso
+    Wait Until Page Contains      Informe seu código de acesso        timeout=20
 
 Finish App
     Capture Page Screenshot
-    Remove Application        com.papitorocks.smartbitmobile
+    #Remove Application            com.papitorocks.smartbitmobile
+    Close All Applications
 
 Get Fixture
     [Arguments]         ${fixture_file}

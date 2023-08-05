@@ -25,26 +25,26 @@ Select Student Where Email
 
 Delete Enroll By Email
 
-    [Arguments]    ${email}
+    [Arguments]            ${email}
 
-    ${user}        Select Student Where Email      ${email}  
+    ${user}         Select Student Where Email      ${email}  
 
-    ${query}       Set Variable
-    ...            DELETE FROM public.enrollments WHERE student_id = '${user}[0]';
+    ${query}        Set Variable
+    ...             DELETE FROM public.enrollments WHERE student_id = '${user}[0]';
 
-    Execute SQL String        ${query}
+    Execute SQL String     ${query}
 
 Delete Student By Email
     [Arguments]            ${email}
 
-    ${query}       Set Variable
-    ...            DELETE FROM public.students WHERE email = '${email}';
+    ${query}        Set Variable
+    ...             DELETE FROM public.students WHERE email = '${email}';
 
     Execute SQL String     ${query}
 
 # Helpers
 Reset Student
-    [Arguments]                   ${email}
+    [Arguments]            ${email}
     
     Connect To PostgreSQL
     Delete Student By Email       ${email}
