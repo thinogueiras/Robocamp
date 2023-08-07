@@ -1,0 +1,10 @@
+robotframework
+robotframework-browser
+robotframework-requests
+robotframework-appiumlibrary
+robotframework-databaselibrary
+robotframework-jsonlibrary
+robotframework-pabot
+browserstack-local
+browserstack-sdk
+python-dotenv

@@ -1,5 +1,13 @@
 .vscode
 logs
+log.html
+output.xml
+playwright-log.txt
+report.html
 results
 apps
-web/resources/pages/libs
+*.pyc
+web/.pabotsuitenames
+web/pabot_results
+.env
+interactive_console_output.xml

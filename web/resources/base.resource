@@ -1,19 +1,32 @@
 *** Settings ***
-Documentation          Arquivo base do projeto
+Documentation               Arquivo base do projeto
 
-Resource               components/navbar.resource
-Resource               components/toast.resource
-Resource               components/notification.resource
-Resource               pages/login.resource
-Resource               pages/enroll.resource
+Resource                    components/navbar.resource
+Resource                    components/toast.resource
+Resource                    components/notification.resource
+Resource                    pages/login.resource
+Resource                    pages/enroll.resource
 
-Resource               services/sessions.resource
-Resource               services/students.resource
+Resource                    services/sessions.resource
+Resource                    services/students.resource
 
-Resource               database.resource
-Library                JSONLibrary
+Resource                    database.resource
+Library                     JSONLibrary
+
+*** Variables ***
+&{desiredCapabilities}      os=Windows
+...                         os_version=10
+...                         browser=chrome
+...                         name=TestInit
+...                         browserstack.username=
+...                         browserstack.accessKey=
+...                         client.playwrightVersion=latest
 
 *** Keywords ***
+Setup Browserstack
+    ${BSENCODEDCAPS}        Evaluate    urllib.parse.quote( json.dumps(${desiredCapabilities}) )
+    Connect To Browser          wss://cdp.browserstack.com/playwright?caps=${BSENCODEDCAPS}
+
 Do Login
     [Arguments]                 ${user}
 
